@@ -1,0 +1,15 @@
+<Bio data visualization>
+
+## IGV
+
+# Get a genbank file. Unfortunately we cannot load a Genbank file into IGV.
+efetch -db nucleotide -format=gb -id=AF086833 > AF086833.gb
+
+# We must convert the GenBank file into GFF3.
+cat AF086833.gb | seqret -filter -feature -osformat gff3 > AF086833.gff
+
+# We must also convert the GenBank file into FASTA.
+cat AF086833.gb | seqret -filter -feature -osformat fasta > AF086833.fa
+
+# Create an index of the FASTA file
+samtools faidx AF086833.fa

@@ -1,0 +1,11 @@
+## transfer genomic coordinates between builds
+
+# Get the chain file that maps from hg19 to hg38.
+wget http://DFJKDFJKDFJDKFJKDFJDKFDJFK.gz
+
+# Get a test data file that will be remapped.
+wget http://DFJKDFJKDFJDKFJKDFJDKFDJFK.bed
+
+# Run the remapping process.
+CrossMap.py bed hg19ToHg38.over.chain.gz test.hg19.bed  test.hg38.bed
+	>>>> remap test.hg19.bed to test.hg38.bed
